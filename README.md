@@ -20,5 +20,5 @@ npm install
 ```
 node app.js
 ```
-The blog runs on localhost://4000
+-The blog runs on localhost://4000
 4. Create an account or log in to start sharing your favorite recipes or discovering new ones.
