@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <% if(recipe !=null) { %>
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <%- recipe.name %>
+                </li>
+            </ol>
+        </nav>
+
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <!-- img-fluid => make the image responsive && stick-top => make the image stick at the top of the page -->
+                <img src="/img/<%- recipe.image %>" class="img-fluid sticky-top" style="top: 20px;"
+                    alt="<%- recipe.name %>" loading="lazy">
+            </div>
+
+            <div class="col-12 col-md-8">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-between">
+
+                        <h1>
+                            <%- recipe.name %>
+                        </h1>
+                        <div class="btn-group">
+                            <a href="/recipe/<%= recipe._id %>/edit" class="btn btn-outline-primary">
+                                <i class="bi bi-pencil"></i> Edit Recipe
+                            </a>
+                            <a class="delete btn btn-outline-danger" data-doc="<%= recipe._id %>">
+                                <i class="bi bi-trash"></i> Delete
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-4 "><i class="bi bi-tag"></i>
+                        <%- recipe.category %>
+                    </div>
+                    <div class="col-12" style="white-space: pre-line;">
+                        <h4>Recipe Description</h4>
+                        <%- recipe.description %>
+                    </div>
+                </div>
+
+                <div class="row pt-4">
+                    <div class="col-12">
+                        <h4>Ingredients</h4>
+                        <ul class="list-group list-group-flush">
+                            <% recipe.ingredients.forEach(function(ingredient, index) { %>
+                                <li class="list-group-item no-space">
+                                    <%= ingredient %>
+                                </li>
+                                <% }); %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <% } else { %>
+            <p>No item found.</p>
+            <% } %>
+                <script>
+                    // this code to send a delete request to the server
+                    const deleteLinks = document.querySelectorAll('.delete');
+
+                    deleteLinks.forEach((deleteLink) => {
+                        deleteLink.addEventListener('click', (e) => {
+                            //to stop the default behavior of the link, which would normally navigate to a new page.
+                            e.preventDefault();
+
+                            const recipeId = deleteLink.dataset.doc;
+                            const endpoint = `/recipe/${recipeId}`;
+
+                            fetch(endpoint, {
+                                method: 'DELETE',
+                            })
+                                .then(response => response.json())
+                                .then(data => window.location.href = data.redirect)
+                                .catch(err => console.log(err));
+                        });
+                    });
+
+
+                </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold">Edit Your Recipe</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead">You can add your personal touch, you can edit your recipe here!</p>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-8">
+
+        <form action="/recipe/<%= recipe._id %>/edit" enctype="multipart/form-data" method="POST">
+
+            <div class="row g-3">
+
+                <div class="col-12">
+                    <label for="name" class="form-label mt-2">Recipe Name</label>
+                    <input type="text" name="name" id="name" class="form-control" required>
+                </div>
+
+                <div class="col-12">
+                    <label for="description" class="form-label mt-2">Description</label>
+                    <textarea name="description" id="description" class="form-control" cols="30" rows="4"></textarea>
+                </div>
+
+                <div class="col-12">
+                    <label for="name" class="form-label mt-2">Ingredients</label>
+                    <div class="ingredientList">
+                        <div class="ingredeintDiv mb-1">
+                            <input type="text" name="ingredients" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <button type="button" class="btn btn-outline-secondary btn-sm mt-2 px-4 me-md-2"
+                        id="addIngredientsBtn">+
+                        Ingredient</button>
+                </div>
+
+                <div class="col-12">
+                    <label for="category" class="mt-2">Select Category</label>
+                    <select class="form-select form-control" name="category" aria-label="Category">
+                        <option selected>Select Category</option>
+                        <option value="Traditional">Traditional</option>
+                        <option value="Modern">Modern</option>
+                        <option value="Drinks">Drinks</option>
+                        <option value="Dessert">Dessert</option>
+                        <option value="Ramadan">Ramadan</option>
+                    </select>
+                </div>
+
+                <div class="col-12">
+                    <label for="image" class="mt-2">Recipe Image</label>
+                    <input type="file" class="form-control " name="image" accept="image/*">
+                </div>
+
+                <div class="col-12 d-flex justify-content-center mt-3">
+                    <button type="submit" class="btn btn-primary btn-dark btn-lg">Save Changes</button>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+</div>

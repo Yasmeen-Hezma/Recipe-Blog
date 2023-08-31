@@ -1,0 +1,102 @@
+:root {
+    --bs-font-sans-serif: 'Rubik', sans-serif;
+}
+
+body {
+
+    font-family: var(--bs-font-sans-serif);
+
+    background-color: rgb(243, 243, 243);
+}
+
+a {
+    color: black;
+}
+
+.category__link {
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    transition: 250ms all;
+    flex-basis: 20%;
+    /* Set the width to 20% */
+    max-width: 20%;
+    /* Set the maximum width to 20% */
+}
+
+.category__link--main {
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    transition: 250ms all;
+}
+
+.category__link:hover {
+    transform: scale(1.1);
+}
+
+.category__link--main:hover {
+    transform: scale(1.1);
+}
+
+.category__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    margin-bottom: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    overflow: hidden;
+    border-radius: 8px;
+    /* This ensures that image container(both image and text), spans the full available width within its parent column.*/
+    width: 100%;
+
+}
+
+.category__img--main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    margin-bottom: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    overflow: hidden;
+    border-radius: 8px;
+
+
+}
+
+.category__img img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.category__img--main img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.category__img--large {
+    height: 230px;
+}
+
+
+
+.d-flex h2 {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.no-space {
+    padding: 2px;
+    margin: 2px;
+}
+
+.btn-group {
+    display: flex;
+    align-items: center;
+}
+
+.btn-group>* {
+    margin-right: 10px;
+}
