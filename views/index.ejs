@@ -5,7 +5,7 @@
     </div>
 
     <div class="col-12 col-lg-6">
-        <h1 class="display-5 fw-bold mb-3">Huge selection of Egyption recipe ideas</h1>
+        <h3 class="display-6 fw-bold mb-3">Huge selection of Egyption recipe ideas</h3>
         <p class="lead">
             Explore the Flavors of Egypt and Beyond: From Traditional Delights to Modern Inspirations.
         </p>
@@ -41,7 +41,7 @@
 <section>
     <div class="d-flex mb-2 align-items-center">
         <h2>Latest Recipes</h2>
-        <a href="/explore-latest" class="ml-auto">View More</a>
+        <a href="/explore-latest" class="ms-auto">View More</a>
     </div>
     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
         <% if (typeof food.latest !=='undefined' && food.latest.length>0 ) { %>
@@ -63,12 +63,13 @@
 <section>
     <div class="d-flex mb-2 align-items-center">
         <h2>Traditional Recipes</h2>
-        <a href="/categories/Traditional" class="ml-auto">View More</a>
+        <a href="/categories/Traditional" class="ms-auto">View More</a>
     </div>
-    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-        <% if (typeof food.traditional !=='undefined' && food.traditional.length>0 ) { %>
+    <div class="row g-2 g-lg-3">
+        <% if (typeof food.traditional !=='undefined' && food.traditional.length> 0 ) { %>
             <% food.traditional.forEach((recipe, index)=> { %>
-                <a href="/recipe/<%= recipe._id %>" class="col text-center category__link--main">
+                <a href="/recipe/<%= recipe._id %>"
+                    class="col-lg-2 col-md-3 col-sm-4 col-6 text-center category__link--main flex-grow-1">
                     <div class="category__img--main category__img--large shadow">
                         <img src="/img/<%= recipe.image %>" alt="<%= recipe.name %>" loading="lazy">
                     </div>
@@ -80,17 +81,19 @@
                     <% } %>
     </div>
 </section>
+
 <!-- End of Traditional -->
 <!-- Modern -->
 <section>
     <div class="d-flex mb-2 align-items-center">
         <h2>Modern Recipes</h2>
-        <a href="/categories/Modern" class="ml-auto">View More</a>
+        <a href="/categories/Modern" class="ms-auto">View More</a>
     </div>
-    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-        <% if (typeof food.modern !=='undefined' && food.modern.length>0 ) { %>
+    <div class="row g-2 g-lg-3">
+        <% if (typeof food.modern !=='undefined' && food.modern.length> 0 ) { %>
             <% food.modern.forEach((recipe, index)=> { %>
-                <a href="/recipe/<%= recipe._id %>" class="col text-center category__link--main">
+                <a href="/recipe/<%= recipe._id %>"
+                    class="col-lg-2 col-md-3 col-sm-4 col-6 text-center category__link--main flex-grow-1">
                     <div class="category__img--main category__img--large shadow">
                         <img src="/img/<%= recipe.image %>" alt="<%= recipe.name %>" loading="lazy">
                     </div>
@@ -106,13 +109,14 @@
 <!-- Drinks -->
 <section>
     <div class="d-flex mb-2 align-items-center">
-        <h2>Drinks Recipes</h2>
-        <a href="/categories/Drinks" class="ml-auto">View More</a>
+        <h2>Drinks</h2>
+        <a href="/categories/Drinks" class="ms-auto">View More</a>
     </div>
-    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-        <% if (typeof food.drinks !=='undefined' && food.drinks.length>0 ) { %>
+    <div class="row g-2 g-lg-3">
+        <% if (typeof food.drinks !=='undefined' && food.drinks.length> 0 ) { %>
             <% food.drinks.forEach((recipe, index)=> { %>
-                <a href="/recipe/<%= recipe._id %>" class="col text-center category__link--main">
+                <a href="/recipe/<%= recipe._id %>"
+                    class="col-lg-2 col-md-3 col-sm-4 col-6 text-center category__link--main flex-grow-1">
                     <div class="category__img--main category__img--large shadow">
                         <img src="/img/<%= recipe.image %>" alt="<%= recipe.name %>" loading="lazy">
                     </div>
@@ -127,7 +131,7 @@
 <!-- End of Drinks -->
 <!-- Submit -->
 <section class="px-4 py-5 my-5 text-center">
-    <img src="/img/Submit.jpg" alt="Publish your recipe for FREE " width="566" height="288" loading="lazy"
+    <img src="/img/submit.jpg" alt="Publish your recipe for FREE " width="566" height="288" loading="lazy"
         class="d-block mx-auto mb-4 img-fluid">
     <h1 class="display-5 fw-bold"> Publish your recipe for FREE</h1>
     <div class="col-lg-6 mx-auto">
