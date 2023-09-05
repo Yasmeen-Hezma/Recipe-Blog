@@ -4,7 +4,10 @@ Each user can edit or remove their own recipe.
 ## Demo:
 
 
-https://github.com/Yasmeen-Hezma/Recipe-Blog/assets/133809744/3879c33b-f3b6-4195-8086-d3a140796793
+
+
+https://github.com/Yasmeen-Hezma/Recipe-Blog/assets/133809744/75801f06-683a-4764-9918-c60b6fdd6c0a
+
 
 
 ## Technologies Used:
